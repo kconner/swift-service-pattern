@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C51A09A292A11F00032ACE0 /* ViewControllerB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C51A099292A11F00032ACE0 /* ViewControllerB.storyboard */; };
+		2C51A09C292A12260032ACE0 /* ViewControllerA.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C51A09B292A12260032ACE0 /* ViewControllerA.storyboard */; };
 		2C8A669C292A048800C8974E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A669B292A048800C8974E /* AppDelegate.swift */; };
 		2C8A669E292A048800C8974E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A669D292A048800C8974E /* SceneDelegate.swift */; };
 		2C8A66A3292A048800C8974E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C8A66A1292A048800C8974E /* Main.storyboard */; };
@@ -82,6 +84,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2C51A099292A11F00032ACE0 /* ViewControllerB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewControllerB.storyboard; sourceTree = "<group>"; };
+		2C51A09B292A12260032ACE0 /* ViewControllerA.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewControllerA.storyboard; sourceTree = "<group>"; };
 		2C8A6698292A048800C8974E /* UIKitExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C8A669B292A048800C8974E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C8A669D292A048800C8974E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -223,7 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				2CC82B3E292A10560039ECEA /* UIKitExampleUI.h */,
+				2C51A09B292A12260032ACE0 /* ViewControllerA.storyboard */,
 				2CC82B48292A106F0039ECEA /* ViewControllerA.swift */,
+				2C51A099292A11F00032ACE0 /* ViewControllerB.storyboard */,
 				2CC82B4A292A107F0039ECEA /* ViewControllerB.swift */,
 			);
 			path = UIKitExampleUI;
@@ -415,6 +421,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C51A09A292A11F00032ACE0 /* ViewControllerB.storyboard in Resources */,
+				2C51A09C292A12260032ACE0 /* ViewControllerA.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
