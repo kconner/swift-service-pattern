@@ -11,7 +11,7 @@
         <!--Item 2-->
         <scene sceneID="8lT-DU-YEG">
             <objects>
-                <viewController id="gYX-qt-XP0" sceneMemberID="viewController">
+                <viewController id="gYX-qt-XP0" customClass="ViewControllerB" customModule="UIKitExampleUI" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UC5-C7-Qow">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
         <!--Item 1-->
         <scene sceneID="C9z-fn-z5k">
             <objects>
-                <viewController id="vsK-S3-gM2" sceneMemberID="viewController">
+                <viewController id="vsK-S3-gM2" customClass="ViewControllerA" customModule="UIKitExampleUI" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t4u-Jk-7Ix">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
