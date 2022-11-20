@@ -14,4 +14,5 @@ class ViewControllerB : UIViewController {
         
         view.backgroundColor = .lightGray
     }
+    
 }
