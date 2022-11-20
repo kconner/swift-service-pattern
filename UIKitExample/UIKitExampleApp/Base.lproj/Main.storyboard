@@ -24,16 +24,6 @@
             </objects>
             <point key="canvasLocation" x="-873" y="-83"/>
         </scene>
-        <!--ViewControllerB-->
-        <scene sceneID="pw4-sl-GFX">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ViewControllerB" bundleIdentifier="com.kevinconner.UIKitExampleUI" id="5yE-av-3zn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="X2h-Z5-EkD"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rbh-XJ-SAK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-239" y="-42"/>
-        </scene>
         <!--ViewControllerA-->
         <scene sceneID="n59-16-hNu">
             <objects>
@@ -43,6 +33,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1r6-Vh-gqQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-239" y="-123"/>
+        </scene>
+        <!--ViewControllerB-->
+        <scene sceneID="pw4-sl-GFX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ViewControllerB" bundleIdentifier="com.kevinconner.UIKitExampleUI" id="5yE-av-3zn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="X2h-Z5-EkD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rbh-XJ-SAK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-239" y="-42"/>
         </scene>
     </scenes>
 </document>

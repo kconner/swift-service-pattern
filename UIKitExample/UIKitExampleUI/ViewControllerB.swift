@@ -7,12 +7,4 @@
 
 import UIKit
 
-class ViewControllerB : UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .lightGray
-    }
-    
-}
+class ViewControllerB : UIViewController {}

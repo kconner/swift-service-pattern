@@ -9,10 +9,14 @@ import UIKit
 
 class ViewControllerA : UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .darkGray
+    @IBOutlet private var textField: UITextField!
+    
+    private var enteredText: String {
+        textField.text ?? "n/a"
+    }
+    
+    @IBSegueAction func prepareViewControllerC(_ coder: NSCoder) -> ViewControllerC? {
+        ViewControllerC(text: enteredText, coder: coder)
     }
     
 }
