@@ -8,17 +8,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--B-->
         <scene sceneID="8lT-DU-YEG">
             <objects>
                 <viewController id="gYX-qt-XP0" customClass="ViewControllerB" customModule="UIKitExampleUI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UC5-C7-Qow">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="purple" translatesAutoresizingMaskIntoConstraints="NO" id="vnx-vR-ITI">
+                                <rect key="frame" x="132.66666666666666" y="374.66666666666669" width="127.99999999999997" height="128"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="He4-Kd-Y93"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vnx-vR-ITI" firstAttribute="centerY" secondItem="He4-Kd-Y93" secondAttribute="centerY" id="HJj-KA-dKC"/>
+                            <constraint firstItem="vnx-vR-ITI" firstAttribute="centerX" secondItem="He4-Kd-Y93" secondAttribute="centerX" id="SYL-lP-bY4"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="yLW-3N-Ait"/>
+                    <tabBarItem key="tabBarItem" title="B" id="yLW-3N-Ait"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Jh-kk-wSh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -26,6 +35,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="purple" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -24,6 +24,7 @@
 		2C8A6717292A094B00C8974E /* ServiceA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A6716292A094B00C8974E /* ServiceA.swift */; };
 		2C8A6719292A0A0500C8974E /* ServiceB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A6718292A0A0500C8974E /* ServiceB.swift */; };
 		2C8A671B292A0AF100C8974E /* Services+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A671A292A0AF100C8974E /* Services+Shared.swift */; };
+		2CBB6E46292B1FF300C1BE61 /* UIAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBB6E45292B1FF300C1BE61 /* UIAssets.xcassets */; };
 		2CC82B3F292A10560039ECEA /* UIKitExampleUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CC82B3E292A10560039ECEA /* UIKitExampleUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2CC82B42292A10560039ECEA /* UIKitExampleUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC82B3C292A10560039ECEA /* UIKitExampleUI.framework */; };
 		2CC82B44292A10560039ECEA /* UIKitExampleUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC82B3C292A10560039ECEA /* UIKitExampleUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -107,6 +108,7 @@
 		2C8A6716292A094B00C8974E /* ServiceA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceA.swift; sourceTree = "<group>"; };
 		2C8A6718292A0A0500C8974E /* ServiceB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceB.swift; sourceTree = "<group>"; };
 		2C8A671A292A0AF100C8974E /* Services+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Services+Shared.swift"; sourceTree = "<group>"; };
+		2CBB6E45292B1FF300C1BE61 /* UIAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UIAssets.xcassets; sourceTree = "<group>"; };
 		2CC82B3C292A10560039ECEA /* UIKitExampleUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKitExampleUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC82B3E292A10560039ECEA /* UIKitExampleUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKitExampleUI.h; sourceTree = "<group>"; };
 		2CC82B48292A106F0039ECEA /* ViewControllerA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerA.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				2CC82B4A292A107F0039ECEA /* ViewControllerB.swift */,
 				2C51F3D4292A17E00002F798 /* ViewControllerC.storyboard */,
 				2C51F3D6292A17EB0002F798 /* ViewControllerC.swift */,
+				2CBB6E45292B1FF300C1BE61 /* UIAssets.xcassets */,
 			);
 			path = UIKitExampleUI;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			files = (
 				2C51A09A292A11F00032ACE0 /* ViewControllerB.storyboard in Resources */,
 				2C51F3D5292A17E00002F798 /* ViewControllerC.storyboard in Resources */,
+				2CBB6E46292B1FF300C1BE61 /* UIAssets.xcassets in Resources */,
 				2C51A09C292A12260032ACE0 /* ViewControllerA.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
