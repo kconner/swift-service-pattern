@@ -10,8 +10,6 @@ import UIKitExampleServices
 
 protocol TabBarServices : LeftServices {}
 
-extension ServiceCollection : TabBarServices {}
-
 class TabBarController : UITabBarController {
     
     private var services: TabBarServices!
@@ -23,16 +21,7 @@ class TabBarController : UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let configuration = ServiceCollectionConfiguration(
-            message: "o hai mark"
-        )
-        let services = ServiceCollection(configuration: configuration)
-        
-        configure(services: services)
-        
         (viewControllers?[0] as! LeftViewController).configure(services: services)
     }
-    
-    
     
 }

@@ -1,5 +1,5 @@
 //
-//  ViewControllerC.swift
+//  ModalViewController.swift
 //  UIKitExample
 //
 //  Created by Kevin Conner on 2022-11-20.
@@ -26,7 +26,7 @@ class ModalViewController : UIViewController {
         super.init(coder: coder)
     }
     
-    @available(*, unavailable, renamed: "init(text:coder:)")
+    @available(*, unavailable, renamed: "init(services:text:coder:)")
     required init?(coder: NSCoder) {
         fatalError("Invalid way of decoding this class")
     }

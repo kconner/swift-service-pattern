@@ -7,22 +7,20 @@
 
 import Foundation
 
-public class ServiceCollectionConfiguration :
-    ThingConfiguration, StuffConfiguration
-{
-    public let message: String
-    
-    public init(message: String) {
-        self.message = message
-    }
-}
-
 public class ServiceCollection {
     
+    public class Configuration : ThingConfiguration, StuffConfiguration {
+        public let message: String
+        
+        public init(message: String) {
+            self.message = message
+        }
+    }
+   
     public let thing: ThingService
     public let stuff: StuffService
     
-    public init(configuration: ServiceCollectionConfiguration) {
+    public init(configuration: Configuration) {
         thing = ThingServiceImp(
             configuration: configuration
         )
