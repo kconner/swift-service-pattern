@@ -27,7 +27,7 @@
         <!--ViewControllerA-->
         <scene sceneID="n59-16-hNu">
             <objects>
-                <viewControllerPlaceholder storyboardName="ViewControllerA" bundleIdentifier="com.kevinconner.UIKitExampleUI" id="abx-Jh-m48" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ViewControllerA" id="abx-Jh-m48" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="GQN-9g-7hA"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1r6-Vh-gqQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -37,7 +37,7 @@
         <!--ViewControllerB-->
         <scene sceneID="pw4-sl-GFX">
             <objects>
-                <viewControllerPlaceholder storyboardName="ViewControllerB" bundleIdentifier="com.kevinconner.UIKitExampleUI" id="5yE-av-3zn" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="ViewControllerB" id="5yE-av-3zn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="X2h-Z5-EkD"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbh-XJ-SAK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
