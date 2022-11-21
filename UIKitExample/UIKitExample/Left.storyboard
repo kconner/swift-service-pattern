@@ -11,7 +11,7 @@
         <!--A-->
         <scene sceneID="C9z-fn-z5k">
             <objects>
-                <viewController id="vsK-S3-gM2" customClass="ViewControllerA" customModule="UIKitExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vsK-S3-gM2" customClass="LeftViewController" customModule="UIKitExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t4u-Jk-7Ix">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Button"/>
                                         <connections>
-                                            <segue destination="OxF-Xh-nOh" kind="presentation" destinationCreationSelector="showC:" id="IG9-5c-z2a"/>
+                                            <segue destination="OxF-Xh-nOh" kind="presentation" destinationCreationSelector="presentModal:" id="IG9-5c-z2a"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="4" y="-411"/>
         </scene>
-        <!--ViewControllerC-->
+        <!--Modal-->
         <scene sceneID="chG-ah-enO">
             <objects>
-                <viewControllerPlaceholder storyboardName="ViewControllerC" id="OxF-Xh-nOh" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Modal" id="OxF-Xh-nOh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQb-iH-LwR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="631" y="-411"/>

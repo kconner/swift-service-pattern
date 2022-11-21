@@ -8,18 +8,18 @@
 import UIKit
 import UIKitExampleServices
 
-protocol TabBarControllerServices : ViewControllerAServices {}
+protocol TabBarServices : LeftServices {}
 
-extension ServiceCollection : TabBarControllerServices {}
+extension ServiceCollection : TabBarServices {}
 
 class TabBarController : UITabBarController {
     
-    private let services: TabBarControllerServices = ServiceCollection()
+    private let services: TabBarServices = ServiceCollection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        (viewControllers?[0] as! ViewControllerA).configure(services: services)
+        (viewControllers?[0] as! LeftViewController).configure(services: services)
     }
     
 }

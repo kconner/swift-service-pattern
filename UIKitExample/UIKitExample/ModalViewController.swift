@@ -8,18 +8,18 @@
 import UIKit
 import UIKitExampleServices
 
-protocol ViewControllerCServices {
-    var serviceB: ServiceB { get }
+protocol ModalServices {
+    var stuff: StuffService { get }
 }
 
-class ViewControllerC : UIViewController {
+class ModalViewController : UIViewController {
     
     @IBOutlet private var label: UILabel!
     
-    private let services: ViewControllerCServices
+    private let services: ModalServices
     private let text: String
     
-    init?(services: ViewControllerCServices, text: String, coder: NSCoder) {
+    init?(services: ModalServices, text: String, coder: NSCoder) {
         self.services = services
         self.text = text
         
