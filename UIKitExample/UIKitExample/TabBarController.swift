@@ -10,17 +10,18 @@ import UIKitExampleServices
 
 class TabBarController : UITabBarController {
     
-    private let serviceA = ServiceA.shared
-    private let serviceB = ServiceB.shared
+    private let services = ServiceCollection()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "showA":
             let child = segue.destination as! ViewControllerA
-            child.inject(serviceB: serviceB)
+            child.configure(services: services)
         default:
             break
         }
     }
     
 }
+
+extension ServiceCollection : ViewControllerAServices {}

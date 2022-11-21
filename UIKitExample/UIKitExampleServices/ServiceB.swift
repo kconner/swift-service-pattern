@@ -7,15 +7,19 @@
 
 import Foundation
 
-public class ServiceB {
+public protocol ServiceB {
+    func taskB()
+}
+
+class ServiceBImp : ServiceB {
     
     private let serviceA: ServiceA
     
-    public init(serviceA: ServiceA) {
+    init(serviceA: ServiceA) {
         self.serviceA = serviceA
     }
     
-    public func taskB() {
+    func taskB() {
         serviceA.taskA()
     }
     

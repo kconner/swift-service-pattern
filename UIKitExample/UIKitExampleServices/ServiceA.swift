@@ -7,10 +7,14 @@
 
 import Foundation
 
-public class ServiceA {
+public protocol ServiceA {
+    func taskA()
+}
+
+class ServiceAImp : ServiceA {
     
-    public init() {}
+    init() {}
     
-    public func taskA() {}
+    func taskA() {}
     
 }
