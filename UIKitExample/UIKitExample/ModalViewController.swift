@@ -14,7 +14,7 @@ protocol ModalServices {
 
 class ModalViewController : UIViewController {
     
-    @IBOutlet private var label: UILabel!
+    @IBOutlet private (set) var label: UILabel!
     
     private let services: ModalServices
     private let text: String
