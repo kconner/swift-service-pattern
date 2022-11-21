@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,18 +17,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aH-do-xMI">
-                                <rect key="frame" x="175.66666666666666" y="428" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9Iq-dS-LTk">
+                                <rect key="frame" x="16" y="407.33333333333331" width="361" height="62.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aH-do-xMI">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUt-aT-slP">
+                                        <rect key="frame" x="0.0" y="28.333333333333375" width="361" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapButton:" destination="cDw-be-FBi" eventType="touchUpInside" id="MlK-4s-QQS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Shp-su-C6s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7aH-do-xMI" firstAttribute="centerX" secondItem="Shp-su-C6s" secondAttribute="centerX" id="Eu4-g7-0tS"/>
-                            <constraint firstItem="7aH-do-xMI" firstAttribute="centerY" secondItem="Shp-su-C6s" secondAttribute="centerY" id="RNM-TP-bde"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9Iq-dS-LTk" secondAttribute="trailing" id="F3f-NW-KZw"/>
+                            <constraint firstItem="9Iq-dS-LTk" firstAttribute="leading" secondItem="7pn-aF-Y8T" secondAttribute="leadingMargin" id="WOT-9z-tTU"/>
+                            <constraint firstItem="9Iq-dS-LTk" firstAttribute="centerY" secondItem="Shp-su-C6s" secondAttribute="centerY" id="hDY-Hu-4mz"/>
                         </constraints>
                     </view>
                     <connections>

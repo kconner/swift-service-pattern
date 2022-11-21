@@ -37,4 +37,8 @@ class ModalViewController : UIViewController {
         label.text = text
     }
     
+    @IBAction func didTapButton(_ sender: Any) {
+        services.stuff.doStuff()
+    }
+    
 }

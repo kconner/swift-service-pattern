@@ -7,14 +7,30 @@
 
 import Foundation
 
+public struct ServiceCollectionConfiguration {
+    public let thing: ThingServiceConfiguration
+    public let stuff: StuffServiceConfiguration
+    
+    public init(thing: ThingServiceConfiguration, stuff: StuffServiceConfiguration) {
+        self.thing = thing
+        self.stuff = stuff
+    }
+}
+
 public class ServiceCollection {
     
     public let thing: ThingService
     public let stuff: StuffService
     
-    public init() {
-        thing = ThingServiceImp()
-        stuff = StuffServiceImp(thingService: thing)
+    public init(configuration: ServiceCollectionConfiguration) {
+        thing = ThingServiceImp(
+            configuration: configuration.thing
+        )
+        
+        stuff = StuffServiceImp(
+            configuration: configuration.stuff,
+            thingService: thing
+        )
     }
     
 }

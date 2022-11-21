@@ -7,14 +7,28 @@
 
 import Foundation
 
+public struct ThingServiceConfiguration {
+    let message: String
+    
+    public init(message: String) {
+        self.message = message
+    }
+}
+
 public protocol ThingService {
     func doThing()
 }
 
 class ThingServiceImp : ThingService {
     
-    init() {}
+    let message: String
     
-    func doThing() {}
+    init(configuration: ThingServiceConfiguration) {
+        self.message = configuration.message
+    }
+    
+    func doThing() {
+        NSLog("ThingService: \(message)")
+    }
     
 }
