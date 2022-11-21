@@ -1,19 +1,26 @@
 //
 //  ViewControllerC.swift
-//  UIKitExampleUI
+//  UIKitExample
 //
 //  Created by Kevin Conner on 2022-11-20.
 //
 
 import UIKit
+import UIKitExampleServices
+
+protocol ViewControllerCServices {
+    var serviceB: ServiceB { get }
+}
 
 class ViewControllerC : UIViewController {
     
     @IBOutlet private var label: UILabel!
     
+    private let services: ViewControllerCServices
     private let text: String
     
-    init?(text: String, coder: NSCoder) {
+    init?(services: ViewControllerCServices, text: String, coder: NSCoder) {
+        self.services = services
         self.text = text
         
         super.init(coder: coder)

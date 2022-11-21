@@ -1,6 +1,6 @@
 //
 //  ViewControllerA.swift
-//  UIKitExampleUI
+//  UIKitExample
 //
 //  Created by Kevin Conner on 2022-11-19.
 //
@@ -8,9 +8,7 @@
 import UIKit
 import UIKitExampleServices
 
-protocol ViewControllerAServices {
-    var serviceB: ServiceB { get }
-}
+protocol ViewControllerAServices : ViewControllerCServices {}
 
 class ViewControllerA : UIViewController {
     
@@ -27,7 +25,7 @@ class ViewControllerA : UIViewController {
     }
     
     @IBSegueAction func showC(_ coder: NSCoder) -> ViewControllerC? {
-        ViewControllerC(text: enteredText, coder: coder)
+        ViewControllerC(services: services, text: enteredText, coder: coder)
     }
     
 }

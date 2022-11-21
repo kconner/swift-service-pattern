@@ -8,20 +8,18 @@
 import UIKit
 import UIKitExampleServices
 
+protocol TabBarControllerServices : ViewControllerAServices {}
+
+extension ServiceCollection : TabBarControllerServices {}
+
 class TabBarController : UITabBarController {
     
-    private let services = ServiceCollection()
+    private let services: TabBarControllerServices = ServiceCollection()
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "showA":
-            let child = segue.destination as! ViewControllerA
-            child.configure(services: services)
-        default:
-            break
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        (viewControllers?[0] as! ViewControllerA).configure(services: services)
     }
     
 }
-
-extension ServiceCollection : ViewControllerAServices {}

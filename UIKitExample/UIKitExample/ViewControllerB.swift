@@ -1,6 +1,6 @@
 //
 //  ViewControllerB.swift
-//  UIKitExampleUI
+//  UIKitExample
 //
 //  Created by Kevin Conner on 2022-11-19.
 //
