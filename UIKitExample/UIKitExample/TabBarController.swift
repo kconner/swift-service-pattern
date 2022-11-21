@@ -24,8 +24,7 @@ class TabBarController : UITabBarController {
         super.viewDidLoad()
         
         let configuration = ServiceCollectionConfiguration(
-            thing: ThingServiceConfiguration(message: "o hai mark"),
-            stuff: StuffServiceConfiguration()
+            message: "o hai mark"
         )
         let services = ServiceCollection(configuration: configuration)
         

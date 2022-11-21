@@ -7,13 +7,13 @@
 
 import Foundation
 
-public struct ServiceCollectionConfiguration {
-    public let thing: ThingServiceConfiguration
-    public let stuff: StuffServiceConfiguration
+public class ServiceCollectionConfiguration :
+    ThingConfiguration, StuffConfiguration
+{
+    public let message: String
     
-    public init(thing: ThingServiceConfiguration, stuff: StuffServiceConfiguration) {
-        self.thing = thing
-        self.stuff = stuff
+    public init(message: String) {
+        self.message = message
     }
 }
 
@@ -24,11 +24,11 @@ public class ServiceCollection {
     
     public init(configuration: ServiceCollectionConfiguration) {
         thing = ThingServiceImp(
-            configuration: configuration.thing
+            configuration: configuration
         )
         
         stuff = StuffServiceImp(
-            configuration: configuration.stuff,
+            configuration: configuration,
             thingService: thing
         )
     }
