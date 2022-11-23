@@ -8,20 +8,19 @@
 import UIKit
 import UIKitExampleServices
 
-protocol TabBarServices : LeftServices {}
-
 class TabBarController : UITabBarController {
     
-    private var services: TabBarServices!
+    private var environment: Environment!
     
-    func configure(services: TabBarServices) {
-        self.services = services
+    func configure(environment: Environment) {
+        self.environment = environment
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        (viewControllers?[0] as! LeftViewController).configure(services: services)
+        let leftViewController = viewControllers?[0] as! LeftViewController
+        leftViewController.configure(environment: environment)
     }
     
 }

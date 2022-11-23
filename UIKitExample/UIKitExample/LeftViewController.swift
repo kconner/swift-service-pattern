@@ -8,16 +8,14 @@
 import UIKit
 import UIKitExampleServices
 
-protocol LeftServices : ModalServices {}
-
 class LeftViewController : UIViewController {
     
     @IBOutlet private var textField: UITextField!
     
-    private var services: LeftServices!
+    private var environment: Environment!
     
-    func configure(services: LeftServices) {
-        self.services = services
+    func configure(environment: Environment) {
+        self.environment = environment
     }
     
     private var enteredText: String {
@@ -25,7 +23,11 @@ class LeftViewController : UIViewController {
     }
     
     @IBSegueAction func presentModal(_ coder: NSCoder) -> ModalViewController? {
-        ModalViewController(services: services, text: enteredText, coder: coder)
+        ModalViewController(
+            environment: environment,
+            text: enteredText,
+            coder: coder
+        )
     }
     
 }

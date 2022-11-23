@@ -8,19 +8,15 @@
 import UIKit
 import UIKitExampleServices
 
-protocol ModalServices {
-    var stuff: StuffService { get }
-}
-
 class ModalViewController : UIViewController {
     
     @IBOutlet private (set) var label: UILabel!
     
-    private let services: ModalServices
+    private var environment: Environment
     private let text: String
     
-    init?(services: ModalServices, text: String, coder: NSCoder) {
-        self.services = services
+    init?(environment: Environment, text: String, coder: NSCoder) {
+        self.environment = environment
         self.text = text
         
         super.init(coder: coder)
@@ -38,7 +34,7 @@ class ModalViewController : UIViewController {
     }
     
     @IBAction func didTapButton(_ sender: Any) {
-        services.stuff.doStuff()
+        environment.stuff.doStuff()
     }
     
 }

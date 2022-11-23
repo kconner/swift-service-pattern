@@ -11,13 +11,11 @@ public protocol StuffService {
     func doStuff()
 }
 
-public protocol StuffConfiguration {}
-
 class StuffServiceImp : StuffService {
     
     private let thingService: ThingService
     
-    init(configuration: StuffConfiguration, thingService: ThingService) {
+    init(thingService: ThingService) {
         self.thingService = thingService
     }
     

@@ -14,8 +14,8 @@
 		2C0C64ED292B2BAC00159E46 /* Right.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C51A099292A11F00032ACE0 /* Right.storyboard */; };
 		2C0C64EE292B2BAC00159E46 /* Left.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C51A09B292A12260032ACE0 /* Left.storyboard */; };
 		2C0C64FA292B3E6700159E46 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0C64F9292B3E6700159E46 /* TabBarController.swift */; };
-		2C0C64FB292B421A00159E46 /* ServiceCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A671A292A0AF100C8974E /* ServiceCollection.swift */; };
-		2C693DBB292B641E00776CFE /* ServiceCollection+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DBA292B641E00776CFE /* ServiceCollection+App.swift */; };
+		2C0C64FB292B421A00159E46 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A671A292A0AF100C8974E /* Environment.swift */; };
+		2C693DBB292B641E00776CFE /* Environment+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DBA292B641E00776CFE /* Environment+App.swift */; };
 		2C693DBD292B6B2400776CFE /* ModalViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DBC292B6B2400776CFE /* ModalViewControllerTests.swift */; };
 		2C8A669C292A048800C8974E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A669B292A048800C8974E /* AppDelegate.swift */; };
 		2C8A669E292A048800C8974E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A669D292A048800C8974E /* SceneDelegate.swift */; };
@@ -82,7 +82,7 @@
 		2C51A09B292A12260032ACE0 /* Left.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Left.storyboard; sourceTree = "<group>"; };
 		2C51F3D4292A17E00002F798 /* Modal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Modal.storyboard; sourceTree = "<group>"; };
 		2C51F3D6292A17EB0002F798 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
-		2C693DBA292B641E00776CFE /* ServiceCollection+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceCollection+App.swift"; sourceTree = "<group>"; };
+		2C693DBA292B641E00776CFE /* Environment+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+App.swift"; sourceTree = "<group>"; };
 		2C693DBC292B6B2400776CFE /* ModalViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerTests.swift; sourceTree = "<group>"; };
 		2C8A6698292A048800C8974E /* UIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C8A669B292A048800C8974E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		2C8A670B292A08EF00C8974E /* libUIKitExampleServices.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUIKitExampleServices.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C8A6716292A094B00C8974E /* ThingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingService.swift; sourceTree = "<group>"; };
 		2C8A6718292A0A0500C8974E /* StuffService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffService.swift; sourceTree = "<group>"; };
-		2C8A671A292A0AF100C8974E /* ServiceCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCollection.swift; sourceTree = "<group>"; };
+		2C8A671A292A0AF100C8974E /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		2CC82B48292A106F0039ECEA /* LeftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		2CC82B4A292A107F0039ECEA /* RightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				2C8A669B292A048800C8974E /* AppDelegate.swift */,
-				2C693DBA292B641E00776CFE /* ServiceCollection+App.swift */,
+				2C693DBA292B641E00776CFE /* Environment+App.swift */,
 				2C8A669D292A048800C8974E /* SceneDelegate.swift */,
 				2C8A66A1292A048800C8974E /* TabBar.storyboard */,
 				2C0C64F9292B3E6700159E46 /* TabBarController.swift */,
@@ -202,7 +202,7 @@
 		2C8A670C292A08EF00C8974E /* UIKitExampleServices */ = {
 			isa = PBXGroup;
 			children = (
-				2C8A671A292A0AF100C8974E /* ServiceCollection.swift */,
+				2C8A671A292A0AF100C8974E /* Environment.swift */,
 				2C8A6716292A094B00C8974E /* ThingService.swift */,
 				2C8A6718292A0A0500C8974E /* StuffService.swift */,
 			);
@@ -373,7 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C693DBB292B641E00776CFE /* ServiceCollection+App.swift in Sources */,
+				2C693DBB292B641E00776CFE /* Environment+App.swift in Sources */,
 				2C0C64E8292B2BA700159E46 /* ModalViewController.swift in Sources */,
 				2C8A669C292A048800C8974E /* AppDelegate.swift in Sources */,
 				2C0C64E6292B2BA700159E46 /* RightViewController.swift in Sources */,
@@ -406,7 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C8A6719292A0A0500C8974E /* StuffService.swift in Sources */,
-				2C0C64FB292B421A00159E46 /* ServiceCollection.swift in Sources */,
+				2C0C64FB292B421A00159E46 /* Environment.swift in Sources */,
 				2C8A6717292A094B00C8974E /* ThingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +508,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Debug;
 		};
@@ -561,6 +562,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

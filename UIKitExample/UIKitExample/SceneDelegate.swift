@@ -22,7 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
               let window = windowScene.windows.first,
               let tabBarController = window.rootViewController as? TabBarController else { return }
         
-        tabBarController.configure(services: ServiceCollection.shared)
+        let environment = Environment.appEnvironment
+        tabBarController.configure(environment: environment)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
