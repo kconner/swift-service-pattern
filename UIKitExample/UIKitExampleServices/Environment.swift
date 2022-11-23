@@ -7,8 +7,7 @@
 
 import Foundation
 
-@MainActor
-public class Environment {
+public struct Environment {
     
     private struct Key: Equatable, Hashable {
         let type: Any.Type
@@ -23,42 +22,36 @@ public class Environment {
     }
     
     private var items: [Key : (Environment) -> Any] = [:]
-    private var parent: Environment?
     
-    public init(parent: Environment? = nil) {
-        self.parent = parent
-    }
-    
-    public func child() -> Environment {
-        Environment(parent: self)
-    }
+    public init() {}
     
     public subscript<S>(_ type: S.Type) -> S {
         let key = Key(type: type)
-        if let factory = items[key] {
-            return factory(self) as! S
-        } else if let parent {
-            return parent[type]
-        } else {
-            fatalError("Service not registered: \(type)")
+        guard let factory = items[key] else {
+            fatalError("Not in environment: \(type)")
         }
+        
+        return factory(self) as! S
     }
     
-    public func add<S>(_ type: S.Type, factory: @escaping (Environment) -> S) {
+    public mutating func add<S>(item: S) {
+        add(S.self, item: item)
+    }
+    
+    public mutating func add<S>(_ type: S.Type, item: S) {
+        add(type) { _ in item }
+    }
+    
+    public mutating func add<S>(_ type: S.Type, factory: @escaping (Environment) -> S) {
         let key = Key(type: type)
         items[key] = factory
-    }
-    
-    public func add<S>(_ type: S.Type, item: S) {
-        let key = Key(type: type)
-        items[key] = { _ in item }
     }
     
 }
 
 extension Environment {
     
-    public func addAppItems(message: String) {
+    public mutating func addAppItems(message: String) {
         add(ThingService.self, item: ThingServiceImp(message: message))
         
         add(StuffService.self) { environment in

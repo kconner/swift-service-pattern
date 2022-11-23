@@ -12,7 +12,7 @@ class ModalViewController : UIViewController {
     
     @IBOutlet private (set) var label: UILabel!
     
-    private var environment: Environment
+    private let environment: Environment
     private let text: String
     
     init?(environment: Environment, text: String, coder: NSCoder) {
@@ -30,11 +30,19 @@ class ModalViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label.text = text
+        updateLabel()
+    }
+    
+    func updateLabel() {
+        let session = environment[LeftSession.self]
+        label.text = "\(text), \(session.modalPresentationCount), \(session.doStuffCount)"
     }
     
     @IBAction func didTapButton(_ sender: Any) {
         environment.stuff.doStuff()
+        
+        environment[LeftSession.self].doStuffCount += 1
+        updateLabel()
     }
     
 }
