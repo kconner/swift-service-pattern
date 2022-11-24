@@ -10,11 +10,7 @@ import UIKitExampleServices
 
 extension Environment {
     
-    static let appEnvironment: Environment = {
-        var environment = Environment()
-        environment.addAppItems(message: "o hai mark")
-        return environment
-    }()
+   static let appEnvironment = Environment().addingAppItems(message: "o hai mark")
     
     var thing: ThingService {
         self[ThingService.self]

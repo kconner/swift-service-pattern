@@ -34,29 +34,31 @@ public struct Environment {
         return factory(self) as! S
     }
     
-    public mutating func add<S>(item: S) {
-        add(S.self, item: item)
+    public func adding<S>(item: S) -> Environment {
+        adding(S.self, item: item)
     }
     
-    public mutating func add<S>(_ type: S.Type, item: S) {
-        add(type) { _ in item }
+    public func adding<S>(_ type: S.Type, item: S) -> Environment {
+        adding(type) { _ in item }
     }
     
-    public mutating func add<S>(_ type: S.Type, factory: @escaping (Environment) -> S) {
+    public func adding<S>(_ type: S.Type, factory: @escaping (Environment) -> S) -> Environment {
         let key = Key(type: type)
-        items[key] = factory
+        
+        var copy = self
+        copy.items[key] = factory
+        return copy
     }
     
 }
 
 extension Environment {
     
-    public mutating func addAppItems(message: String) {
-        add(ThingService.self, item: ThingServiceImp(message: message))
-        
-        add(StuffService.self) { environment in
-            StuffServiceImp(thingService: environment[ThingService.self])
-        }
+    public func addingAppItems(message: String) -> Environment {
+        self.adding(ThingService.self, item: ThingServiceImp(message: message))
+            .adding(StuffService.self) { environment in
+                StuffServiceImp(thingService: environment[ThingService.self])
+            }
     }
     
 }

@@ -7,75 +7,74 @@
 
 import XCTest
 @testable import UIKitExample
-@testable import UIKitExampleServices
-
-private class FakeStuff : StuffService {
-    var doStuffCount = 0
-    
-    func doStuff() {
-        doStuffCount += 1
-    }
-}
-
-private class FakeModalDelegate : ModalDelegate {
-    var modalSessionDescription: String
-    
-    init(modalSessionDescription: String) {
-        self.modalSessionDescription = modalSessionDescription
-    }
-    
-    var modalDidStuffCount = 0
-    
-    func modalDidStuff() {
-        modalDidStuffCount += 1
-    }
-}
+import UIKitExampleServices
 
 @MainActor
 final class ModalViewControllerTests: XCTestCase {
     
-    func makeSubject(environment: Environment, text: String, delegate: ModalDelegate?) -> ModalViewController! {
+    private class FakeModalDelegate : ModalDelegate {
+        var modalSessionDescription: String
+        
+        init(modalSessionDescription: String) {
+            self.modalSessionDescription = modalSessionDescription
+        }
+        
+        var modalDidStuffCount = 0
+        
+        func modalDidStuff() {
+            modalDidStuffCount += 1
+        }
+    }
+
+    private func makeSubject(
+        parent: TestEnvironmentView,
+        text: String,
+        delegate: ModalDelegate?
+    ) throws -> ModalViewController {
         let subject = UIStoryboard(name: "Modal", bundle: nil).instantiateInitialViewController { coder in
             ModalViewController(text: text, coder: coder)
         }
         
         guard let subject else {
-            XCTFail("Expected view controller")
-            return nil
+            throw TestError(message: "View controller not instantiated")
         }
         
         subject.delegate = delegate
-        subject.loadViewIfNeeded()
+        parent.addSubview(subject.view)
         return subject
     }
     
     func testViewSetup() throws {
-        var environment = Environment()
-        environment.add(StuffService.self, item: FakeStuff())
+        let parent = Environment()
+            .adding(StuffService.self, item: FakeStuffService())
+            .view()
         
-        let labelText = "okay"
-        
-        let delegate = FakeModalDelegate(modalSessionDescription: "one two three")
-        
-        let subject = makeSubject(environment: environment, text: labelText, delegate: delegate)!
+        let subject = try makeSubject(
+            parent: parent,
+            text: "okay",
+            delegate: FakeModalDelegate(modalSessionDescription: "one two three")
+        )
         
         XCTAssertEqual(subject.label.text, "okay, one two three")
     }
     
     func testDidTapButton() throws {
-        let stuffService = FakeStuff()
-        
-        var environment = Environment()
-        environment.add(StuffService.self, item: stuffService)
-        
+        let stuffService = FakeStuffService()
+        let parent = Environment()
+            .adding(StuffService.self, item: stuffService)
+            .view()
         let delegate = FakeModalDelegate(modalSessionDescription: "ignored")
         
-        let subject = makeSubject(environment: environment, text: "ignored", delegate: delegate)!
+        let subject = try makeSubject(
+            parent: parent,
+            text: "ignored",
+            delegate: delegate
+        )
         
         subject.didTapButton(self)
         
         XCTAssertEqual(stuffService.doStuffCount, 1)
         XCTAssertEqual(delegate.modalDidStuffCount, 1)
     }
-
+    
 }

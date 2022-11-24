@@ -18,12 +18,14 @@
 		2C693DBB292B641E00776CFE /* Environment+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DBA292B641E00776CFE /* Environment+App.swift */; };
 		2C693DBD292B6B2400776CFE /* ModalViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DBC292B6B2400776CFE /* ModalViewControllerTests.swift */; };
 		2C693DBF292F0B9000776CFE /* UIResponder+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DBE292F0B9000776CFE /* UIResponder+Environment.swift */; };
+		2C693DC1292F3A8300776CFE /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DC0292F3A8300776CFE /* TestError.swift */; };
+		2C693DC4292F3AC600776CFE /* TestEnvironmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DC3292F3AC600776CFE /* TestEnvironmentView.swift */; };
+		2C693DC9292F3F2800776CFE /* FakeStuffService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DC8292F3F2800776CFE /* FakeStuffService.swift */; };
 		2C8A669C292A048800C8974E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A669B292A048800C8974E /* AppDelegate.swift */; };
 		2C8A669E292A048800C8974E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A669D292A048800C8974E /* SceneDelegate.swift */; };
 		2C8A66A3292A048800C8974E /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C8A66A1292A048800C8974E /* TabBar.storyboard */; };
 		2C8A66A5292A048800C8974E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C8A66A4292A048800C8974E /* Assets.xcassets */; };
 		2C8A66A8292A048800C8974E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C8A66A6292A048800C8974E /* LaunchScreen.storyboard */; };
-		2C8A66B3292A048800C8974E /* UIKitExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A66B2292A048800C8974E /* UIKitExampleTests.swift */; };
 		2C8A66BD292A048800C8974E /* UIKitExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A66BC292A048800C8974E /* UIKitExampleUITests.swift */; };
 		2C8A66BF292A048800C8974E /* UIKitExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A66BE292A048800C8974E /* UIKitExampleUITestsLaunchTests.swift */; };
 		2C8A6713292A092200C8974E /* libUIKitExampleServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8A670B292A08EF00C8974E /* libUIKitExampleServices.a */; };
@@ -86,6 +88,9 @@
 		2C693DBA292B641E00776CFE /* Environment+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+App.swift"; sourceTree = "<group>"; };
 		2C693DBC292B6B2400776CFE /* ModalViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerTests.swift; sourceTree = "<group>"; };
 		2C693DBE292F0B9000776CFE /* UIResponder+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Environment.swift"; sourceTree = "<group>"; };
+		2C693DC0292F3A8300776CFE /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
+		2C693DC3292F3AC600776CFE /* TestEnvironmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEnvironmentView.swift; sourceTree = "<group>"; };
+		2C693DC8292F3F2800776CFE /* FakeStuffService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStuffService.swift; sourceTree = "<group>"; };
 		2C8A6698292A048800C8974E /* UIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C8A669B292A048800C8974E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C8A669D292A048800C8974E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,7 +99,6 @@
 		2C8A66A7292A048800C8974E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C8A66A9292A048800C8974E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C8A66AE292A048800C8974E /* UIKitExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKitExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C8A66B2292A048800C8974E /* UIKitExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExampleTests.swift; sourceTree = "<group>"; };
 		2C8A66B8292A048800C8974E /* UIKitExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKitExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C8A66BC292A048800C8974E /* UIKitExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExampleUITests.swift; sourceTree = "<group>"; };
 		2C8A66BE292A048800C8974E /* UIKitExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -139,6 +143,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C693DC2292F3A9800776CFE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2C693DC0292F3A8300776CFE /* TestError.swift */,
+				2C693DC3292F3AC600776CFE /* TestEnvironmentView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2C693DC6292F3EE400776CFE /* Fakes */ = {
+			isa = PBXGroup;
+			children = (
+				2C693DC8292F3F2800776CFE /* FakeStuffService.swift */,
+			);
+			path = Fakes;
+			sourceTree = "<group>";
+		};
 		2C8A668F292A048800C8974E = {
 			isa = PBXGroup;
 			children = (
@@ -187,8 +208,9 @@
 		2C8A66B1292A048800C8974E /* UIKitExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				2C8A66B2292A048800C8974E /* UIKitExampleTests.swift */,
 				2C693DBC292B6B2400776CFE /* ModalViewControllerTests.swift */,
+				2C693DC2292F3A9800776CFE /* Helpers */,
+				2C693DC6292F3EE400776CFE /* Fakes */,
 			);
 			path = UIKitExampleTests;
 			sourceTree = "<group>";
@@ -391,8 +413,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C693DC4292F3AC600776CFE /* TestEnvironmentView.swift in Sources */,
+				2C693DC1292F3A8300776CFE /* TestError.swift in Sources */,
+				2C693DC9292F3F2800776CFE /* FakeStuffService.swift in Sources */,
 				2C693DBD292B6B2400776CFE /* ModalViewControllerTests.swift in Sources */,
-				2C8A66B3292A048800C8974E /* UIKitExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
