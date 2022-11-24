@@ -13,16 +13,15 @@ class LeftSession {
     var doStuffCount = 0
 }
 
-class LeftViewController : UIViewController {
+class LeftViewController : UIViewController, EnvironmentFrame {
     
     @IBOutlet private var textField: UITextField!
     
-    private var environment = Environment()
-    
-    func configure(environment: Environment) {
-        self.environment = environment
-        self.environment.add(LeftSession.self, item: LeftSession())
-    }
+    lazy var localEnvironment = {
+        var env = nextEnvironment
+        env.add(LeftSession.self, item: LeftSession())
+        return env
+    }()
     
     private var enteredText: String {
         textField.text ?? "n/a"

@@ -8,15 +8,16 @@
 import UIKit
 import UIKitExampleServices
 
-class ModalViewController : UIViewController {
+class ModalViewController : UIViewController, EnvironmentFrame {
     
     @IBOutlet private (set) var label: UILabel!
     
-    private let environment: Environment
+    let localEnvironment: Environment
+    
     private let text: String
     
     init?(environment: Environment, text: String, coder: NSCoder) {
-        self.environment = environment
+        self.localEnvironment = environment
         self.text = text
         
         super.init(coder: coder)

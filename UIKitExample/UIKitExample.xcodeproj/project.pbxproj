@@ -17,6 +17,7 @@
 		2C0C64FB292B421A00159E46 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A671A292A0AF100C8974E /* Environment.swift */; };
 		2C693DBB292B641E00776CFE /* Environment+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DBA292B641E00776CFE /* Environment+App.swift */; };
 		2C693DBD292B6B2400776CFE /* ModalViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DBC292B6B2400776CFE /* ModalViewControllerTests.swift */; };
+		2C693DBF292F0B9000776CFE /* UIResponder+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DBE292F0B9000776CFE /* UIResponder+Environment.swift */; };
 		2C8A669C292A048800C8974E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A669B292A048800C8974E /* AppDelegate.swift */; };
 		2C8A669E292A048800C8974E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A669D292A048800C8974E /* SceneDelegate.swift */; };
 		2C8A66A3292A048800C8974E /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C8A66A1292A048800C8974E /* TabBar.storyboard */; };
@@ -84,6 +85,7 @@
 		2C51F3D6292A17EB0002F798 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		2C693DBA292B641E00776CFE /* Environment+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+App.swift"; sourceTree = "<group>"; };
 		2C693DBC292B6B2400776CFE /* ModalViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerTests.swift; sourceTree = "<group>"; };
+		2C693DBE292F0B9000776CFE /* UIResponder+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Environment.swift"; sourceTree = "<group>"; };
 		2C8A6698292A048800C8974E /* UIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C8A669B292A048800C8974E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C8A669D292A048800C8974E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				2C8A669B292A048800C8974E /* AppDelegate.swift */,
 				2C693DBA292B641E00776CFE /* Environment+App.swift */,
+				2C693DBE292F0B9000776CFE /* UIResponder+Environment.swift */,
 				2C8A669D292A048800C8974E /* SceneDelegate.swift */,
 				2C8A66A1292A048800C8974E /* TabBar.storyboard */,
 				2C0C64F9292B3E6700159E46 /* TabBarController.swift */,
@@ -374,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C693DBB292B641E00776CFE /* Environment+App.swift in Sources */,
+				2C693DBF292F0B9000776CFE /* UIResponder+Environment.swift in Sources */,
 				2C0C64E8292B2BA700159E46 /* ModalViewController.swift in Sources */,
 				2C8A669C292A048800C8974E /* AppDelegate.swift in Sources */,
 				2C0C64E6292B2BA700159E46 /* RightViewController.swift in Sources */,

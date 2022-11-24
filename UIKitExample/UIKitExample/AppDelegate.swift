@@ -9,7 +9,9 @@ import UIKit
 import UIKitExampleServices
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, EnvironmentFrame {
+
+    lazy var localEnvironment = Environment.appEnvironment
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

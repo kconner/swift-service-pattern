@@ -17,19 +17,12 @@ private struct FakeStuff : StuffService {
     }
 }
 
-private struct FakeModalServices : ModalServices {
-    let stuff: StuffService
-    
-    init(didStuff: @escaping () -> Void) {
-        self.stuff = FakeStuff(didStuff: didStuff)
-    }
-}
-
+@MainActor
 final class ModalViewControllerTests: XCTestCase {
     
-    func makeSubject(services: ModalServices, text: String) -> ModalViewController! {
+    func makeSubject(environment: Environment, text: String) -> ModalViewController! {
         let subject = UIStoryboard(name: "Modal", bundle: nil).instantiateInitialViewController { coder in
-            ModalViewController(services: services, text: text, coder: coder)
+            ModalViewController(environment: environment, text: text, coder: coder)
         }
         
         guard let subject else {
@@ -43,24 +36,27 @@ final class ModalViewControllerTests: XCTestCase {
     }
     
     func testViewSetup() throws {
-        let services = FakeModalServices(didStuff: {})
+        var environment = Environment()
+        environment.add(LeftSession.self, item: LeftSession())
+        environment.add(StuffService.self, item: FakeStuff {})
+        
         let labelText = "okay"
         
-        let subject = makeSubject(services: services, text: labelText)!
+        let subject = makeSubject(environment: environment, text: labelText)!
         
-        XCTAssertEqual(subject.label.text, labelText)
+        XCTAssertEqual(subject.label.text, "\(labelText), 0, 0")
     }
     
     func testDidTapButton() throws {
         var didCallDoStuff = false
         
-        let services = FakeModalServices(
-            didStuff: {
-                didCallDoStuff = true
-            }
-        )
+        var environment = Environment()
+        environment.add(LeftSession.self, item: LeftSession())
+        environment.add(StuffService.self, item: FakeStuff {
+            didCallDoStuff = true
+        })
         
-        let subject = makeSubject(services: services, text: "ignored")!
+        let subject = makeSubject(environment: environment, text: "ignored")!
         
         subject.didTapButton(self)
         
