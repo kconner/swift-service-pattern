@@ -8,16 +8,21 @@
 import UIKit
 import UIKitExampleServices
 
-class ModalViewController : UIViewController, EnvironmentFrame {
+@MainActor
+protocol ModalDelegate : AnyObject {
+    var modalSessionDescription: String { get }
+    func modalDidStuff()
+}
+
+class ModalViewController : UIViewController {
     
     @IBOutlet private (set) var label: UILabel!
     
-    let localEnvironment: Environment
-    
     private let text: String
     
-    init?(environment: Environment, text: String, coder: NSCoder) {
-        self.localEnvironment = environment
+    weak var delegate: ModalDelegate?
+    
+    init?(text: String, coder: NSCoder) {
         self.text = text
         
         super.init(coder: coder)
@@ -35,14 +40,13 @@ class ModalViewController : UIViewController, EnvironmentFrame {
     }
     
     func updateLabel() {
-        let session = environment[LeftSession.self]
-        label.text = "\(text), \(session.modalPresentationCount), \(session.doStuffCount)"
+        label.text = "\(text), \(delegate?.modalSessionDescription ?? "-")"
     }
     
     @IBAction func didTapButton(_ sender: Any) {
         environment.stuff.doStuff()
         
-        environment[LeftSession.self].doStuffCount += 1
+        delegate?.modalDidStuff()
         updateLabel()
     }
     

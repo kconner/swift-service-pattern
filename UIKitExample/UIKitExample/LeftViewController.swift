@@ -8,33 +8,39 @@
 import UIKit
 import UIKitExampleServices
 
-class LeftSession {
+private class LeftSession {
     var modalPresentationCount = 0
     var doStuffCount = 0
 }
 
-class LeftViewController : UIViewController, EnvironmentFrame {
+class LeftViewController : UIViewController {
     
     @IBOutlet private var textField: UITextField!
     
-    lazy var localEnvironment = {
-        var env = nextEnvironment
-        env.add(LeftSession.self, item: LeftSession())
-        return env
-    }()
+    private var session = LeftSession()
     
     private var enteredText: String {
         textField.text ?? "n/a"
     }
     
     @IBSegueAction func presentModal(_ coder: NSCoder) -> ModalViewController? {
-        environment[LeftSession.self].modalPresentationCount += 1
+        session.modalPresentationCount += 1
         
-        return ModalViewController(
-            environment: environment,
-            text: enteredText,
-            coder: coder
-        )
+        let viewController = ModalViewController(text: enteredText, coder: coder)
+        viewController?.delegate = self
+        return viewController
+    }
+    
+}
+
+extension LeftViewController : ModalDelegate {
+    
+    var modalSessionDescription: String {
+        "\(session.modalPresentationCount), \(session.doStuffCount)"
+    }
+    
+    func modalDidStuff() {
+        session.doStuffCount += 1
     }
     
 }
