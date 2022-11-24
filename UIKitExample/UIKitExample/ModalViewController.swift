@@ -10,13 +10,13 @@ import UIKitExampleServices
 
 @MainActor
 protocol ModalDelegate : AnyObject {
-    var modalSessionDescription: String { get }
-    func modalDidStuff()
+    func modalCountString(_ modal: ModalViewController) -> String
+    func modalDidStuff(_ modal: ModalViewController)
 }
 
 class ModalViewController : UIViewController {
     
-    @IBOutlet private (set) var label: UILabel!
+    @IBOutlet private(set) var label: UILabel!
     
     private let text: String
     
@@ -28,7 +28,7 @@ class ModalViewController : UIViewController {
         super.init(coder: coder)
     }
     
-    @available(*, unavailable, renamed: "init(services:text:coder:)")
+    @available(*, unavailable, renamed: "init(ext:coder:)")
     required init?(coder: NSCoder) {
         fatalError("Invalid way of decoding this class")
     }
@@ -40,13 +40,13 @@ class ModalViewController : UIViewController {
     }
     
     func updateLabel() {
-        label.text = "\(text), \(delegate?.modalSessionDescription ?? "-")"
+        label.text = "\(text), \(delegate?.modalCountString(self) ?? "-")"
     }
     
     @IBAction func didTapButton(_ sender: Any) {
         environment.stuff.doStuff()
         
-        delegate?.modalDidStuff()
+        delegate?.modalDidStuff(self)
         updateLabel()
     }
     

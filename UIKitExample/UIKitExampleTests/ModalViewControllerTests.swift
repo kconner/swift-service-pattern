@@ -13,15 +13,19 @@ import UIKitExampleServices
 final class ModalViewControllerTests: XCTestCase {
     
     private class FakeModalDelegate : ModalDelegate {
-        var modalSessionDescription: String
+        let countString: String
         
-        init(modalSessionDescription: String) {
-            self.modalSessionDescription = modalSessionDescription
+        init(countString: String = "unused") {
+            self.countString = countString
         }
         
-        var modalDidStuffCount = 0
+        func modalCountString(_ modal: ModalViewController) -> String {
+            countString
+        }
         
-        func modalDidStuff() {
+        private(set) var modalDidStuffCount = 0
+        
+        func modalDidStuff(_ modal: ModalViewController) {
             modalDidStuffCount += 1
         }
     }
@@ -52,7 +56,7 @@ final class ModalViewControllerTests: XCTestCase {
         let subject = try makeSubject(
             parent: parent,
             text: "okay",
-            delegate: FakeModalDelegate(modalSessionDescription: "one two three")
+            delegate: FakeModalDelegate(countString: "one two three")
         )
         
         XCTAssertEqual(subject.label.text, "okay, one two three")
@@ -63,11 +67,11 @@ final class ModalViewControllerTests: XCTestCase {
         let parent = Environment()
             .adding(StuffService.self, item: stuffService)
             .view()
-        let delegate = FakeModalDelegate(modalSessionDescription: "ignored")
+        let delegate = FakeModalDelegate()
         
         let subject = try makeSubject(
             parent: parent,
-            text: "ignored",
+            text: "unused",
             delegate: delegate
         )
         

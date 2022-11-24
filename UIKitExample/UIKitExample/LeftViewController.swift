@@ -8,23 +8,17 @@
 import UIKit
 import UIKitExampleServices
 
-private class LeftSession {
-    var modalPresentationCount = 0
-    var doStuffCount = 0
-}
-
 class LeftViewController : UIViewController {
     
     @IBOutlet private var textField: UITextField!
     
-    private var session = LeftSession()
-    
-    private var enteredText: String {
-        textField.text ?? "n/a"
-    }
+    private var modalPresentationCount = 0
+    private var doStuffCount = 0
     
     @IBSegueAction func presentModal(_ coder: NSCoder) -> ModalViewController? {
-        session.modalPresentationCount += 1
+        modalPresentationCount += 1
+        
+        let enteredText = textField.text ?? "n/a"
         
         let viewController = ModalViewController(text: enteredText, coder: coder)
         viewController?.delegate = self
@@ -35,12 +29,12 @@ class LeftViewController : UIViewController {
 
 extension LeftViewController : ModalDelegate {
     
-    var modalSessionDescription: String {
-        "\(session.modalPresentationCount), \(session.doStuffCount)"
+    func modalCountString(_ modal: ModalViewController) -> String {
+        "\(modalPresentationCount), \(doStuffCount)"
     }
     
-    func modalDidStuff() {
-        session.doStuffCount += 1
+    func modalDidStuff(_ modal: ModalViewController) {
+        doStuffCount += 1
     }
     
 }
