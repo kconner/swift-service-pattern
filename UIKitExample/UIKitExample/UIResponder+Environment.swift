@@ -29,7 +29,7 @@ extension UIResponder {
 protocol EnvironmentFrame : UIResponder {
     
     /// To inherit a parent environment and add to it locally:
-    /// lazy var localEnvironment = nextResponderEnvironment.adding(…)
+    /// `lazy var localEnvironment = nextResponderEnvironment.adding(…)`
     var localEnvironment: Environment { get }
     
 }

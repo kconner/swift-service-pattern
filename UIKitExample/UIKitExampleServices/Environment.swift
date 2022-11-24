@@ -34,10 +34,6 @@ public struct Environment {
         return factory(self) as! S
     }
     
-    public func adding<S>(item: S) -> Environment {
-        adding(S.self, item: item)
-    }
-    
     public func adding<S>(_ type: S.Type, item: S) -> Environment {
         adding(type) { _ in item }
     }
@@ -48,17 +44,6 @@ public struct Environment {
         var copy = self
         copy.items[key] = factory
         return copy
-    }
-    
-}
-
-extension Environment {
-    
-    public func addingAppItems(message: String) -> Environment {
-        self.adding(ThingService.self, item: ThingServiceImp(message: message))
-            .adding(StuffService.self) { environment in
-                StuffServiceImp(thingService: environment[ThingService.self])
-            }
     }
     
 }
