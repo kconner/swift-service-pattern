@@ -13,7 +13,7 @@ public protocol ThingService {
 
 class ThingServiceImp : ThingService {
     
-    let message: String
+    private let message: String
     
     init(message: String) {
         self.message = message

@@ -11,10 +11,17 @@ import UIKitExampleServices
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    fileprivate let environment = Environment().addingAppItems(message: "o hai mark")
+    fileprivate var environment: Environment?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Load/gather app configuration
+        let configuration = Configuration(message: "o hai mark")
+        
+        // Service setup
+        environment = Environment(configuration: configuration)
+        
         return true
     }
 
@@ -38,10 +45,8 @@ extension SceneDelegate {
     
     // If you know a way for the app to hand a new scene some data
     // before it connects, I'd like to replace this use of .shared.
-    var environment: Environment {
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        assert(appDelegate != nil, "Expected AppDelegate")
-        return appDelegate!.environment
+    var appDelegateEnvironment: Environment? {
+        (UIApplication.shared.delegate as? AppDelegate)?.environment
     }
     
 }

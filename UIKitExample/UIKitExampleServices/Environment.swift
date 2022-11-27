@@ -7,43 +7,25 @@
 
 import Foundation
 
-public struct Environment {
+public class Environment {
     
-    private struct Key: Equatable, Hashable {
-        let type: Any.Type
-        
-        static func == (lhs: Self, rhs: Self) -> Bool {
-            lhs.type == rhs.type
-        }
-        
-        func hash(into hasher: inout Hasher) {
-            ObjectIdentifier(type).hash(into: &hasher)
-        }
+    public let thing: ThingService!
+    public let stuff: StuffService!
+    
+    init(
+        thing: ThingService? = nil,
+        stuff: StuffService? = nil
+    ) {
+        self.thing = thing
+        self.stuff = stuff
     }
     
-    private var items: [Key : (Environment) -> Any] = [:]
-    
-    public init() {}
-    
-    public subscript<S>(_ type: S.Type) -> S {
-        let key = Key(type: type)
-        guard let factory = items[key] else {
-            fatalError("Not in environment: \(type)")
-        }
+    public convenience init(configuration: Configuration) {
+        let thing = ThingServiceImp(message: configuration.message)
         
-        return factory(self) as! S
-    }
-    
-    public func adding<S>(_ type: S.Type, item: S) -> Environment {
-        adding(type) { _ in item }
-    }
-    
-    public func adding<S>(_ type: S.Type, factory: @escaping (Environment) -> S) -> Environment {
-        let key = Key(type: type)
+        let stuff = StuffServiceImp(thingService: thing)
         
-        var copy = self
-        copy.items[key] = factory
-        return copy
+        self.init(thing: thing, stuff: stuff)
     }
     
 }

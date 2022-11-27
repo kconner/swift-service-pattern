@@ -18,7 +18,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         let tabs = (scene as? UIWindowScene)?.windows.first?.rootViewController as? TabBarController
         assert(tabs != nil, "Expected TabBarController")
-        tabs?.configure(environment: environment)
+        
+        let environment = appDelegateEnvironment
+        assert(environment != nil, "Expected non-nil .appDelegateEnvironment")
+        
+        tabs?.configure(environment: environment!)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
