@@ -20,7 +20,6 @@
 		2C693DC4292F3AC600776CFE /* TestEnvironmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DC3292F3AC600776CFE /* TestEnvironmentView.swift */; };
 		2C693DC9292F3F2800776CFE /* FakeStuffService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DC8292F3F2800776CFE /* FakeStuffService.swift */; };
 		2C693DCC292F461600776CFE /* Environment+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DCB292F461600776CFE /* Environment+App.swift */; };
-		2C693DCD292F510E00776CFE /* UIResponder+EnvironmentFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C693DBE292F0B9000776CFE /* UIResponder+EnvironmentFrame.swift */; };
 		2C8A669C292A048800C8974E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A669B292A048800C8974E /* AppDelegate.swift */; };
 		2C8A669E292A048800C8974E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A669D292A048800C8974E /* SceneDelegate.swift */; };
 		2C8A66A3292A048800C8974E /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C8A66A1292A048800C8974E /* TabBar.storyboard */; };
@@ -86,7 +85,6 @@
 		2C51F3D4292A17E00002F798 /* Modal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Modal.storyboard; sourceTree = "<group>"; };
 		2C51F3D6292A17EB0002F798 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		2C693DBC292B6B2400776CFE /* ModalViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewControllerTests.swift; sourceTree = "<group>"; };
-		2C693DBE292F0B9000776CFE /* UIResponder+EnvironmentFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+EnvironmentFrame.swift"; sourceTree = "<group>"; };
 		2C693DC0292F3A8300776CFE /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		2C693DC3292F3AC600776CFE /* TestEnvironmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEnvironmentView.swift; sourceTree = "<group>"; };
 		2C693DC8292F3F2800776CFE /* FakeStuffService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStuffService.swift; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 			children = (
 				2C8A671A292A0AF100C8974E /* Environment.swift */,
 				2C693DCB292F461600776CFE /* Environment+App.swift */,
-				2C693DBE292F0B9000776CFE /* UIResponder+EnvironmentFrame.swift */,
 				2C8A6716292A094B00C8974E /* ThingService.swift */,
 				2C8A6718292A0A0500C8974E /* StuffService.swift */,
 			);
@@ -434,7 +431,6 @@
 				2C8A6719292A0A0500C8974E /* StuffService.swift in Sources */,
 				2C693DCC292F461600776CFE /* Environment+App.swift in Sources */,
 				2C0C64FB292B421A00159E46 /* Environment.swift in Sources */,
-				2C693DCD292F510E00776CFE /* UIResponder+EnvironmentFrame.swift in Sources */,
 				2C8A6717292A094B00C8974E /* ThingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,19 +16,21 @@ protocol ModalDelegate : AnyObject {
 
 class ModalViewController : UIViewController {
     
-    @IBOutlet private(set) var label: UILabel!
-    
+    private let environment: Environment
     private let text: String
+    
+    @IBOutlet private var label: UILabel!
     
     weak var delegate: ModalDelegate?
     
-    init?(text: String, coder: NSCoder) {
+    init?(environment: Environment, text: String, coder: NSCoder) {
+        self.environment = environment
         self.text = text
         
         super.init(coder: coder)
     }
     
-    @available(*, unavailable, renamed: "init(ext:coder:)")
+    @available(*, unavailable, renamed: "init(environment:text:coder:)")
     required init?(coder: NSCoder) {
         fatalError("Invalid way of decoding this class")
     }

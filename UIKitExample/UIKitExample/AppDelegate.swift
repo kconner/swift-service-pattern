@@ -9,9 +9,9 @@ import UIKit
 import UIKitExampleServices
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, EnvironmentFrame {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    lazy var localEnvironment = Environment().addingAppItems(message: "o hai mark")
+    fileprivate let environment = Environment().addingAppItems(message: "o hai mark")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -32,4 +32,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, EnvironmentFrame {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+}
+
+extension SceneDelegate {
+    
+    // If you know a way for the app to hand a new scene some data
+    // before it connects, I'd like to replace this use of .shared.
+    var environment: Environment {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        assert(appDelegate != nil, "Expected AppDelegate")
+        return appDelegate!.environment
+    }
+    
 }
