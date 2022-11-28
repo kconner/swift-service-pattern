@@ -7,7 +7,7 @@
 
 import XCTest
 @testable import UIKitExample
-import UIKitExampleServices
+@testable import UIKitExampleServices
 
 @MainActor
 final class ModalViewControllerTests: XCTestCase {
@@ -31,12 +31,12 @@ final class ModalViewControllerTests: XCTestCase {
     }
 
     private func makeSubject(
-        parent: TestEnvironmentView,
+        environment: FakeEnvironment,
         text: String,
-        delegate: ModalDelegate?
+        delegate: (any ModalDelegate)?
     ) throws -> ModalViewController {
         let subject = UIStoryboard(name: "Modal", bundle: nil).instantiateInitialViewController { coder in
-            ModalViewController(text: text, coder: coder)
+            ModalViewController(environment: environment, text: text, coder: coder)
         }
         
         guard let subject else {
@@ -44,17 +44,14 @@ final class ModalViewControllerTests: XCTestCase {
         }
         
         subject.delegate = delegate
-        parent.addSubview(subject.view)
+        
+        subject.loadViewIfNeeded()
         return subject
     }
     
     func testViewSetup() throws {
-        let parent = Environment()
-            .adding(StuffService.self, item: FakeStuffService())
-            .view()
-        
         let subject = try makeSubject(
-            parent: parent,
+            environment: FakeEnvironment(stuff: FakeStuffService()),
             text: "okay",
             delegate: FakeModalDelegate(countString: "one two three")
         )
@@ -64,13 +61,10 @@ final class ModalViewControllerTests: XCTestCase {
     
     func testDidTapButton() throws {
         let stuffService = FakeStuffService()
-        let parent = Environment()
-            .adding(StuffService.self, item: stuffService)
-            .view()
         let delegate = FakeModalDelegate()
         
         let subject = try makeSubject(
-            parent: parent,
+            environment: FakeEnvironment(stuff: stuffService),
             text: "unused",
             delegate: delegate
         )

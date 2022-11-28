@@ -8,7 +8,7 @@
 import Foundation
 import UIKitExampleServices
 
-class FakeStuffService : StuffService {
+final class FakeStuffService : StuffService {
     
     var doStuffCount = 0
     

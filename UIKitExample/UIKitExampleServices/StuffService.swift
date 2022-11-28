@@ -7,20 +7,24 @@
 
 import Foundation
 
-public protocol StuffService {
+@MainActor
+public protocol StuffService : Sendable {
     func doStuff()
 }
 
-class StuffServiceImp : StuffService {
+final class StuffServiceImp : StuffService {
     
-    private let thingService: ThingService
+    private let thingService: any ThingService
     
-    init(thingService: ThingService) {
+    init(thingService: any ThingService) {
         self.thingService = thingService
     }
     
     func doStuff() {
-        thingService.doThing()
+        Task {
+            try await Task.sleep(for: .milliseconds(250))
+            await self.thingService.doThing()
+        }
     }
     
 }

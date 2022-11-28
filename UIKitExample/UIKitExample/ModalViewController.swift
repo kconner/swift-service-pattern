@@ -16,14 +16,14 @@ protocol ModalDelegate : AnyObject {
 
 class ModalViewController : UIViewController {
     
-    private let environment: Environment
+    private let environment: any Environment
     private let text: String
     
-    @IBOutlet private var label: UILabel!
+    @IBOutlet private(set) var label: UILabel!
     
     weak var delegate: ModalDelegate?
     
-    init?(environment: Environment, text: String, coder: NSCoder) {
+    init?(environment: any Environment, text: String, coder: NSCoder) {
         self.environment = environment
         self.text = text
         

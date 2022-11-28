@@ -7,11 +7,11 @@
 
 import Foundation
 
-public protocol ThingService {
-    func doThing()
+public protocol ThingService : Sendable {
+    func doThing() async
 }
 
-class ThingServiceImp : ThingService {
+actor ThingServiceImp : ThingService {
     
     private let message: String
     

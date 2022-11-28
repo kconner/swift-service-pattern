@@ -10,14 +10,14 @@ import UIKitExampleServices
 
 class LeftViewController : UIViewController {
     
-    private var environment: Environment!
+    private var environment: (any Environment)!
     
     @IBOutlet private var textField: UITextField!
     
     private var modalPresentationCount = 0
     private var doStuffCount = 0
     
-    func configure(environment: Environment) {
+    func configure(environment: any Environment) {
         self.environment = environment
     }
     

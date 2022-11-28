@@ -10,9 +10,9 @@ import UIKitExampleServices
 
 class TabBarController : UITabBarController {
     
-    private var environment: Environment!
+    private var environment: (any Environment)!
     
-    func configure(environment: Environment) {
+    func configure(environment: any Environment) {
         self.environment = environment
     }
     
